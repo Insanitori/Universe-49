@@ -11,6 +11,7 @@ public class CameraPlayer : MonoBehaviour
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
+    private Vector3 Offset = 0, 3, 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,7 @@ public class CameraPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = Player.transform.position;
-
+        transform.position = Player.transform.position + Offset;
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
