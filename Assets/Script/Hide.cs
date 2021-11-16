@@ -54,9 +54,14 @@ public class Hide : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         isHidden = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isHidden = false;
     }
 
 }
