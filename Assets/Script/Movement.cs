@@ -6,8 +6,6 @@ public class Movement : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     public Transform camTran;
-
-    Rigidbody m_Rigidbody;
     // Start is called before the first frame update
     void Start()
     {
