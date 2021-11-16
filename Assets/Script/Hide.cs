@@ -7,42 +7,56 @@ public class Hide : MonoBehaviour
     public GameObject camera1;
     public GameObject camera2;
     public GameObject player;
+
+    private float yaw = 0.0f;
+    private float speedH = 5.0f;
+    private float turning = 30.0f;
+
+    private bool isHidden;
     // Start is called before the first frame update
     void Start()
     {
         camera1.SetActive(true);
+        camera2.SetActive(false);
+
+        isHidden = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.F))
+        if (isHidden == true)
         {
-            //isHidden
-            camera2.SetActive(true);
-            camera1.SetActive(false);
+            if (Input.GetKey(KeyCode.F))
+            {
+                //isHidden
+                camera2.SetActive(true);
+                camera1.SetActive(false);
+                player.SetActive(false);
+
+                yaw += speedH * Input.GetAxis("Mouse X");
+                if (yaw > turning)
+                {
+                    yaw = turning;
+                }
+                else if (yaw < -turning)
+                {
+                    yaw = -turning;
+                }
+                camera2.transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
+            }
+            else
+            {
+                camera2.SetActive(false);
+                camera1.SetActive(true);
+                player.SetActive(true);
+            }
         }
-        else
-        {
-            camera2.SetActive(false);
-            camera1.SetActive(true);
-        }*/
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(Input.GetKey(KeyCode.F))
-        {
-            //isHidden
-            camera2.SetActive(true);
-            camera1.SetActive(false);
-            player.SetActive(false);
-        }
-        else
-        {
-            camera2.SetActive(false);
-            camera1.SetActive(true);
-            player.SetActive(true);
-        }
+        isHidden = true;
     }
+
 }
