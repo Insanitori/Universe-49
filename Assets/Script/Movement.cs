@@ -4,6 +4,8 @@ public class Movement : MonoBehaviour
 {
     public float speed;
 
+    public Camera camera1;
+
     private Vector3 moveDirection = Vector3.zero;
     public Transform camTran;
     // Start is called before the first frame update
@@ -27,7 +29,7 @@ public class Movement : MonoBehaviour
         moveDirection *= speed;
 
 
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, camera1.transform.localEulerAngles.y, transform.localEulerAngles.z);
 
 
     }
