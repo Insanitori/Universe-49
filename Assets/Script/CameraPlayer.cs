@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraPlayer : MonoBehaviour
@@ -11,7 +9,7 @@ public class CameraPlayer : MonoBehaviour
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-    private Vector3 Offset = 0, 3, 0;
+    private Vector3 Offset = new Vector3(0, 1, 0);
     // Start is called before the first frame update
     void Start()
     {
