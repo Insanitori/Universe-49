@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
-    private float speed = 5.0f;
+    private float speed = 4.0f;
 
     public Camera camera1;
 
@@ -37,27 +37,29 @@ public class Movement : MonoBehaviour
             speed = 10.0f;
         }
 
+        if(isRunning == false)
+        {
+            speed = 4.0f;
+        }
+
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, camera1.transform.localEulerAngles.y, transform.localEulerAngles.z);
         if (staminabar.instance.cur > 0)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
-                StartCoroutine(Delay());
+                isRunning = true;
+                instance = GetComponent<staminabar>();
+                staminabar.instance.useeStamina(.12f);
+            }
+            else
+            {
+                isRunning = false;
             }
         }
         else
         {
             isRunning = false;
         }
-    }
-
-    private IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(5);
-        isRunning = true;
-        instance = GetComponent<staminabar>();
-        staminabar.instance.useeStamina(1);
-        
     }
 }

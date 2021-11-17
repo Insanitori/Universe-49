@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,14 @@ public class staminabar : MonoBehaviour
 {
     public Slider staminaBar;
 
-    public int max = 100;
-    public int cur;
+    public float max = 500;
+    public float cur;
 
     private WaitForSeconds reg = new WaitForSeconds(0.1f);
     // Start is called before the first frame update
     private Coroutine regn;
     public static staminabar instance;
+
 
     private void Awake()
     {
@@ -26,7 +28,7 @@ public class staminabar : MonoBehaviour
         staminaBar.value = max;
     }
 
-    public void useeStamina(int amount)
+    public void useeStamina(float amount)
     {
         if(cur - amount >= 0)
         {
@@ -59,7 +61,7 @@ public class staminabar : MonoBehaviour
         regn = null;
     }
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         
     }
