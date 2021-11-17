@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Movement : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Movement : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     public Transform camTran;
+
+    private staminabar instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,10 @@ public class Movement : MonoBehaviour
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, camera1.transform.localEulerAngles.y, transform.localEulerAngles.z);
 
-
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            instance = GetComponent<staminabar>();
+            staminabar.instance.useeStamina(15);
+        }
     }
 }
