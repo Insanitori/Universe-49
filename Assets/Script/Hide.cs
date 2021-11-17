@@ -27,7 +27,7 @@ public class Hide : MonoBehaviour
     {
         if (isHidden == true)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.Space))
             {
                 //isHidden
                 camera2.SetActive(true);

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
-    public float speed;
+    private float speed = 5.0f;
 
     public Camera camera1;
 
@@ -11,10 +11,11 @@ public class Movement : MonoBehaviour
     public Transform camTran;
 
     private staminabar instance;
+    private bool isRunning;
     // Start is called before the first frame update
     void Start()
     {
-
+        isRunning = false;
     }
 
     // Update is called once per frame
@@ -31,13 +32,32 @@ public class Movement : MonoBehaviour
         moveDirection = camTran.TransformDirection(moveDirection);
         moveDirection *= speed;
 
+        if(isRunning == true)
+        {
+            speed = 10.0f;
+        }
+
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, camera1.transform.localEulerAngles.y, transform.localEulerAngles.z);
-
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (staminabar.instance.cur > 0)
         {
-            instance = GetComponent<staminabar>();
-            staminabar.instance.useeStamina(15);
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            {
+                StartCoroutine(Delay());
+            }
         }
+        else
+        {
+            isRunning = false;
+        }
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(5);
+        isRunning = true;
+        instance = GetComponent<staminabar>();
+        staminabar.instance.useeStamina(1);
+        
     }
 }

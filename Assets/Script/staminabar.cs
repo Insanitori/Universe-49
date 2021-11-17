@@ -7,8 +7,8 @@ public class staminabar : MonoBehaviour
 {
     public Slider staminaBar;
 
-    private int max = 100;
-    private int cur;
+    public int max = 100;
+    public int cur;
 
     private WaitForSeconds reg = new WaitForSeconds(0.1f);
     // Start is called before the first frame update
