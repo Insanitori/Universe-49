@@ -12,20 +12,19 @@ public class Hide : MonoBehaviour
     private float speedH = 5.0f;
     private float turning = 30.0f;
 
-    private bool isHidden;
+    //public bool isHidden;
+    public Movement Move;
     // Start is called before the first frame update
     void Start()
     {
         camera1.SetActive(true);
         camera2.SetActive(false);
-
-        isHidden = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isHidden == true)
+        if (Move.isHidden == true)
         {
             if (Input.GetKey(KeyCode.Space))
             {
@@ -56,12 +55,12 @@ public class Hide : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isHidden = true;
+        Move.isHidden = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isHidden = false;
+        Move.isHidden = false;
     }
 
 }

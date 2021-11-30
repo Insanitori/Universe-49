@@ -11,11 +11,13 @@ public class Movement : MonoBehaviour
     public Transform camTran;
 
     private staminabar instance;
-    private bool isRunning;
+    public bool isRunning;
+    public bool isHidden;
     // Start is called before the first frame update
     void Start()
     {
         isRunning = false;
+        isHidden = false;
     }
 
     // Update is called once per frame
