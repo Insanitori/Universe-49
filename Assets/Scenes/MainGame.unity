@@ -1258,7 +1258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477031011}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 5, y: 1.27, z: 20}
+  m_LocalPosition: {x: -45.1, y: 1.27, z: 20}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3188,7 +3188,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824916279}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1e1e95837d40a044ae64a2ef0b10fc3, type: 3}
   m_Name: 
@@ -3213,7 +3213,19 @@ MonoBehaviour:
   - {fileID: 560830155}
   - {fileID: 1538735660}
   - {fileID: 1509750985}
+  follow:
+  - {fileID: 1306560145}
   - {fileID: 477031016}
+  - {fileID: 560830155}
+  - {fileID: 477031016}
+  - {fileID: 1509750985}
+  - {fileID: 477031016}
+  - {fileID: 1412591320}
+  - {fileID: 477031016}
+  - {fileID: 1538735660}
+  - {fileID: 477031016}
+  Move: {fileID: 477031018}
+  player: {fileID: 477031011}
 --- !u!195 &824916287
 NavMeshAgent:
   m_ObjectHideFlags: 0

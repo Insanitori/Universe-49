@@ -14,6 +14,7 @@ public class Monster : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         //transform.Translate(Vector3.forward * Time.deltaTime * zoomies);
@@ -21,10 +22,10 @@ public class Monster : MonoBehaviour
         //hideScript = GetComponent<Hide>();
         if (Move.isHidden == false)
         {
-            if ((player.transform.position - this.transform.position).sqrMagnitude < 15 * 15)
+            /*if ((player.transform.position - this.transform.position).sqrMagnitude < 15 * 15)
             {
-                transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, zoomies /* Time.deltaTime*/));
-            }
+                transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, zoomies /* Time.deltaTime));
+            }*/
         }
     }
 }
