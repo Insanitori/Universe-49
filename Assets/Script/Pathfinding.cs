@@ -68,3 +68,4 @@ public class Pathfinding : MonoBehaviour
 }
 
 //Figure out how to make the monster chase you if you get close even if it's in the middle of pathfinding
+//also, try adding yield; to the end of the while loop and seeing if there's any difference and seeing if it crashes
