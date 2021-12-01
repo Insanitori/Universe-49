@@ -8,7 +8,7 @@ public class staminabar : MonoBehaviour
 {
     public Slider staminaBar;
 
-    public float max = 500;
+    public float max = 100;
     public float cur;
 
     private WaitForSeconds reg = new WaitForSeconds(0.1f);

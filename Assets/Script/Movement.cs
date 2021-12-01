@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
             {
                 isRunning = true;
                 instance = GetComponent<staminabar>();
-                staminabar.instance.useeStamina(.1f);
+                staminabar.instance.useeStamina(.4f);
             }
             else
             {
