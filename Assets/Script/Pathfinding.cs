@@ -66,3 +66,5 @@ public class Pathfinding : MonoBehaviour
         followPoint = (followPoint + 1) % follow.Length;
     }
 }
+
+//Figure out how to make the monster chase you if you get close even if it's in the middle of pathfinding
