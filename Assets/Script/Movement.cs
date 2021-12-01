@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour
 {
-    private float speed = 4.0f;
+    private float speed = 5.0f;
 
     public Camera camera1;
 
@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
 
         if(isRunning == false)
         {
-            speed = 4.0f;
+            speed = 5.0f;
         }
 
 
