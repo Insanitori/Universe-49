@@ -8,9 +8,9 @@ public class Hide : MonoBehaviour
     public GameObject camera2;
     public GameObject player;
 
-    private float yaw = 0.0f;
-    private float speedH = 5.0f;
-    private float turning = 30.0f;
+    public float yaw = 0.0f;
+    public float speedH = 5.0f;
+    public float turning = 30.0f;
 
     //public bool isHidden;
     public Movement Move;

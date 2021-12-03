@@ -37,6 +37,7 @@ public class Pathfinding : MonoBehaviour
             if ((player.transform.position - this.transform.position).sqrMagnitude < 15 * 15)
             {
                 transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, zoomies /* Time.deltaTime*/));
+                //nav.SetDestination(player.position);
             }
             else if(!nav.pathPending && nav.remainingDistance < 1)
             {
