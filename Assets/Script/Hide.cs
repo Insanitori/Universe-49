@@ -24,6 +24,43 @@ public class Hide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((player.transform.position - this.transform.position).sqrMagnitude < 2 * 2)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Move.isHidden = true;
+                camera2.SetActive(true);
+                camera1.SetActive(false);
+                player.SetActive(false);
+
+                yaw += speedH * Input.GetAxis("Mouse X");
+                if (yaw > turning)
+                {
+                    yaw = turning;
+                }
+                else if (yaw < -turning)
+                {
+                    yaw = -turning;
+                }
+                camera2.transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
+            }
+            else
+            {
+                Move.isHidden = false;
+                camera2.SetActive(false);
+                camera1.SetActive(true);
+                player.SetActive(true);
+            }
+        }
+    }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        Move.isHidden = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
         if (Move.isHidden == true)
         {
             if (Input.GetKey(KeyCode.Space))
@@ -53,14 +90,9 @@ public class Hide : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Move.isHidden = true;
-    }
-
     private void OnTriggerExit(Collider other)
     {
         Move.isHidden = false;
-    }
+    }*/
 
 }
