@@ -57,6 +57,7 @@ public class staminabar : MonoBehaviour
             cur += max / 100;
             staminaBar.value = cur;
             yield return reg;
+            Debug.Log("Regn");
         }
         regn = null;
     }

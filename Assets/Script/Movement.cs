@@ -13,16 +13,24 @@ public class Movement : MonoBehaviour
     private staminabar instance;
     public bool isRunning;
     public bool isHidden;
+
+    public int hurt;
     // Start is called before the first frame update
     void Start()
     {
         isRunning = false;
         isHidden = false;
+
+        hurt = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (hurt == 5)
+        {
+            //GameOver
+        }
 
         float hInport = Input.GetAxis("Horizontal");
         float vInport = Input.GetAxis("Vertical");
@@ -36,7 +44,7 @@ public class Movement : MonoBehaviour
 
         if(isRunning == true)
         {
-            speed = 10.0f;
+            speed = 15.0f;
         }
 
         if(isRunning == false)
@@ -52,7 +60,7 @@ public class Movement : MonoBehaviour
             {
                 isRunning = true;
                 instance = GetComponent<staminabar>();
-                staminabar.instance.useeStamina(.4f);
+                staminabar.instance.useeStamina(100/5 * Time.deltaTime);
             }
             else
             {

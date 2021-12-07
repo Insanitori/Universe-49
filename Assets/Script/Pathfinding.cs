@@ -14,7 +14,7 @@ public class Pathfinding : MonoBehaviour
     private int destPoint;
     private int followPoint;
 
-    private float zoomies = 0.05f;
+    private float zoomies = 0.045f;
     public GameObject player;
     // Start is called before the first frame update
     void Start()

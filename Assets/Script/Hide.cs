@@ -42,7 +42,7 @@ public class Hide : MonoBehaviour
                 {
                     yaw = -turning;
                 }
-                camera2.transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
+                camera2.transform.eulerAngles = new Vector3(0.0f, yaw - transform.parent.rotation.eulerAngles.y, 0.0f);
             }
             else
             {

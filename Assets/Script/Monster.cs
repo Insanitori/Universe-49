@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private float zoomies = 0.02f;
     public GameObject player;
     public Movement Move;
     // Start is called before the first frame update
@@ -17,15 +16,14 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(Vector3.forward * Time.deltaTime * zoomies);
+        
+    }
 
-        //hideScript = GetComponent<Hide>();
-        if (Move.isHidden == false)
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            /*if ((player.transform.position - this.transform.position).sqrMagnitude < 15 * 15)
-            {
-                transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, zoomies /* Time.deltaTime));
-            }*/
+            Move.hurt += 1;
         }
     }
 }
