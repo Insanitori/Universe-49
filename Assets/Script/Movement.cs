@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class Movement : MonoBehaviour
     {
         if (hurt == 5)
         {
-            //GameOver
+            SceneManager.LoadScene("Death");
         }
 
         float hInport = Input.GetAxis("Horizontal");
@@ -54,7 +55,7 @@ public class Movement : MonoBehaviour
 
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, camera1.transform.localEulerAngles.y, transform.localEulerAngles.z);
-        if (staminabar.instance.cur > 0)
+        if (staminabar.instance.cur >= 5)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
@@ -71,5 +72,7 @@ public class Movement : MonoBehaviour
         {
             isRunning = false;
         }
+
+        
     }
 }

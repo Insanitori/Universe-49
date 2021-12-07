@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 351223192}
   - component: {fileID: 351223191}
   - component: {fileID: 351223190}
+  - component: {fileID: 351223194}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -227,6 +228,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &351223194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351223189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d0f84063a63e24ca9c64c7ddda0a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &394888278
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +480,7 @@ GameObject:
   - component: {fileID: 881739020}
   - component: {fileID: 881739019}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +549,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 881739020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351223194}
+        m_TargetAssemblyTypeName: Title, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &881739020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,7 +971,7 @@ GameObject:
   - component: {fileID: 1694710526}
   - component: {fileID: 1694710525}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: QUIT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1040,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1694710526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351223194}
+        m_TargetAssemblyTypeName: Title, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1694710526
 MonoBehaviour:
   m_ObjectHideFlags: 0

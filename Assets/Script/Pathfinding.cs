@@ -14,7 +14,7 @@ public class Pathfinding : MonoBehaviour
     private int destPoint;
     private int followPoint;
 
-    private float zoomies = 0.045f;
+    private float zoomies = 8.0f;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -36,8 +36,8 @@ public class Pathfinding : MonoBehaviour
         {
             if ((player.transform.position - this.transform.position).sqrMagnitude < 15 * 15)
             {
-                transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, zoomies /* Time.deltaTime*/));
-                //nav.SetDestination(player.position);
+                //transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, (zoomies * Time.deltaTime)));
+                nav.SetDestination(player.transform.position);
             }
             else if(!nav.pathPending && nav.remainingDistance < 1)
             {
