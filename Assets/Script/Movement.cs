@@ -15,13 +15,15 @@ public class Movement : MonoBehaviour
     public bool isRunning;
     public bool isHidden;
 
+    public float unlock;
+
     public int hurt;
     // Start is called before the first frame update
     void Start()
     {
         isRunning = false;
         isHidden = false;
-
+        unlock = 0;
         hurt = 0;
     }
 
