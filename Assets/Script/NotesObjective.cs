@@ -10,10 +10,11 @@ public class NotesObjective : MonoBehaviour
     public KeyCode keyToPress;
 
     public Movement Move;
+    
     // Start is called before the first frame update
     void Start()
     {
-        Move = GetComponent<Movement>();
+        
     }
 
     // Update is called once per frame

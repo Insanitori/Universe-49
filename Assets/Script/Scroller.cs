@@ -7,6 +7,7 @@ public class Scroller : MonoBehaviour
     public float tempo;
 
     public bool hasStarted;
+    public LoadMiniGame MG;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class Scroller : MonoBehaviour
     {
         if(!hasStarted)
         {
-            if(Input.anyKeyDown)
+            if(Input.anyKeyDown && MG.skillCheck == true)
             {
                 hasStarted = true;
             }
