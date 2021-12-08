@@ -8,11 +8,15 @@ public class Scroller : MonoBehaviour
 
     public bool hasStarted;
     public LoadMiniGame MG;
+    public CountDown CD;
+
+    private Vector3 starting;
 
     // Start is called before the first frame update
     void Start()
     {
         tempo = tempo / 60f;
+        starting = transform.position;
     }
 
     // Update is called once per frame
@@ -20,14 +24,29 @@ public class Scroller : MonoBehaviour
     {
         if(!hasStarted)
         {
-            if(Input.anyKeyDown && MG.skillCheck == true)
+            if(Input.anyKeyDown && MG.skillCheck == true && CD.timerIsRunning == false)
             {
                 hasStarted = true;
             }
         }
         else
         {
-            transform.position -= new Vector3(0f, tempo * Time.deltaTime, 0f);
+            if (MG.skillCheck == true && CD.timerIsRunning == false)
+            {
+                transform.position -= new Vector3(0f, tempo * Time.deltaTime, 0f);
+            }
+            else if (CD.timerIsRunning == true)
+            {
+                transform.position = starting;
+            }
+
+            if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                hasStarted = false;
+                transform.position = starting;
+                CD.timeRemaining = 20;
+                CD.timerIsRunning = true;
+            }
         }
     }
 }
