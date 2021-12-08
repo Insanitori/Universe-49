@@ -15,8 +15,8 @@ public class Movement : MonoBehaviour
     public bool isRunning;
     public bool isHidden;
 
+    public LoadMiniGame MG;
     public float unlock;
-
     public int hurt;
     // Start is called before the first frame update
     void Start()
@@ -35,19 +35,22 @@ public class Movement : MonoBehaviour
             SceneManager.LoadScene("Death");
         }
 
-        float hInport = Input.GetAxis("Horizontal");
-        float vInport = Input.GetAxis("Vertical");
-
-        transform.Translate(Vector3.right * Time.deltaTime * speed * hInport);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * vInport);
-
-        moveDirection = new Vector3(hInport, 0, vInport);
-        moveDirection = camTran.TransformDirection(moveDirection);
-        moveDirection *= speed;
-
-        if(isRunning == true)
+        if (MG.skillCheck == false)
         {
-            speed = 15.0f;
+            float hInport = Input.GetAxis("Horizontal");
+            float vInport = Input.GetAxis("Vertical");
+
+            transform.Translate(Vector3.right * Time.deltaTime * speed * hInport);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed * vInport);
+
+            moveDirection = new Vector3(hInport, 0, vInport);
+            moveDirection = camTran.TransformDirection(moveDirection);
+            moveDirection *= speed;
+
+            if (isRunning == true)
+            {
+                speed = 15.0f;
+            }
         }
 
         if(isRunning == false)

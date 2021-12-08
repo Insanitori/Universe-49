@@ -36,14 +36,14 @@ public class LoadMiniGame : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && skillCheck == false)
             {
                 skillCheck = true;
-                GameObject.Find("Player").GetComponent<Movement>().enabled = false;
+                //GameObject.Find("Player").GetComponent<Movement>().enabled = false;
                 GameObject.Find("Player Camera").GetComponent<CameraPlayer>().enabled = false;
 
             }
             else if(Input.GetKeyDown(KeyCode.Space) && skillCheck == true)
             {
                 skillCheck = false;
-                GameObject.Find("Player").GetComponent<Movement>().enabled = true;
+                //GameObject.Find("Player").GetComponent<Movement>().enabled = true;
                 GameObject.Find("Player Camera").GetComponent<CameraPlayer>().enabled = true;
             }
         }
