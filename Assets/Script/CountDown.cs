@@ -33,7 +33,7 @@ public class CountDown : MonoBehaviour
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
-                text.text = "Press Enter to Reset";
+                text.text = "Press Enter to Reset All";
             }
         }
     }

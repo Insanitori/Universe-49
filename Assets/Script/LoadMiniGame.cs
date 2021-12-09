@@ -36,6 +36,7 @@ public class LoadMiniGame : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && skillCheck == false)
             {
                 skillCheck = true;
+                Move.stopMovement = true;
                 //GameObject.Find("Player").GetComponent<Movement>().enabled = false;
                 GameObject.Find("Player Camera").GetComponent<CameraPlayer>().enabled = false;
 
@@ -43,6 +44,7 @@ public class LoadMiniGame : MonoBehaviour
             else if(Input.GetKeyDown(KeyCode.Space) && skillCheck == true)
             {
                 skillCheck = false;
+                Move.stopMovement = false;
                 //GameObject.Find("Player").GetComponent<Movement>().enabled = true;
                 GameObject.Find("Player Camera").GetComponent<CameraPlayer>().enabled = true;
             }

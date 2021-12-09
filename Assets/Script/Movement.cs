@@ -15,9 +15,10 @@ public class Movement : MonoBehaviour
     public bool isRunning;
     public bool isHidden;
 
-    public LoadMiniGame MG;
     public float unlock;
     public int hurt;
+
+    public bool stopMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class Movement : MonoBehaviour
         isHidden = false;
         unlock = 0;
         hurt = 0;
+
+        //MG = GetComponent<LoadMiniGame>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,8 @@ public class Movement : MonoBehaviour
             SceneManager.LoadScene("Death");
         }
 
-        if (MG.skillCheck == false)
+
+        if (!stopMovement)
         {
             float hInport = Input.GetAxis("Horizontal");
             float vInport = Input.GetAxis("Vertical");

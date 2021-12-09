@@ -20,6 +20,11 @@ public class Counter : MonoBehaviour
     void Update()
     {
         counter = Move.unlock;
-        text.text = "Lines of Code Collected: " + counter.ToString();
+        text.text = "Lines of Code Collected: " + counter.ToString() + "/90";
+
+        if(Move.unlock >= 90)
+        {
+            text.text = "Proceed to the transfer tube to exit this floor";
+        }
     }
 }
