@@ -7,10 +7,11 @@ public class Monster : MonoBehaviour
 {
     public GameObject player;
     public Movement Move;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        //animator.SetBool("hasStarted");
     }
 
     // Update is called once per frame
