@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking.Types;
 
 public class Movement : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class Movement : MonoBehaviour
     public int hurt;
 
     public bool stopMovement;
+
+    private AudioSource walking;
+    private AudioSource running;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,8 @@ public class Movement : MonoBehaviour
         hurt = 0;
 
         //MG = GetComponent<LoadMiniGame>();
+        walking = GetComponent<AudioSource>();
+        running = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,9 +57,29 @@ public class Movement : MonoBehaviour
             moveDirection = camTran.TransformDirection(moveDirection);
             moveDirection *= speed;
 
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 && !isRunning)
+            {
+                Debug.Log("Is walking");
+                walking.Play();
+            }
+            else
+            {
+                Debug.Log("Stopped walking");
+                walking.Pause();
+            }
+
             if (isRunning == true)
             {
                 speed = 15.0f;
+                if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+                {
+                    running.Play();
+                }
+                else
+                {
+                    running.Pause();
+                }
+                
             }
         }
 
