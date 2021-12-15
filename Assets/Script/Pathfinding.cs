@@ -16,10 +16,16 @@ public class Pathfinding : MonoBehaviour
 
     private float zoomies = 8.0f;
     public GameObject player;
+
+    private AudioSource humming;
+    public AudioSource laughing;
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        humming = GetComponent<AudioSource>();
+
+        humming.Play();
     }
 
     // Update is called once per frame
@@ -37,11 +43,18 @@ public class Pathfinding : MonoBehaviour
             if ((player.transform.position - this.transform.position).sqrMagnitude < 15 * 15)
             {
                 //transform.position = (Vector3.MoveTowards(transform.position, player.transform.position, (zoomies * Time.deltaTime)));
+                humming.Pause();
+                laughing.Play();
                 nav.SetDestination(player.transform.position);
             }
             else if(!nav.pathPending && nav.remainingDistance < 1)
             {
                 LookForPlayer();
+                laughing.Stop();
+                if (!humming.isPlaying)
+                {
+                    humming.Play();
+                }
             }
         }
     }
