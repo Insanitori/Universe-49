@@ -13,10 +13,14 @@ public class LoadMiniGame : MonoBehaviour
 
     public bool skillCheck;
     public Movement Move;
+
+    private AudioSource panel;
     void Start()
     {
         //SceneManager.LoadScene("Skill Check", LoadSceneMode.Additive);
         skillCheck = false;
+
+        panel = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +41,7 @@ public class LoadMiniGame : MonoBehaviour
             {
                 skillCheck = true;
                 Move.stopMovement = true;
+                panel.Play();
                 //GameObject.Find("Player").GetComponent<Movement>().enabled = false;
                 GameObject.Find("Player Camera").GetComponent<CameraPlayer>().enabled = false;
 

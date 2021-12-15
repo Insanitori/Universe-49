@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (hurt == 5)
         {
@@ -56,12 +56,13 @@ public class Movement : MonoBehaviour
             moveDirection = camTran.TransformDirection(moveDirection);
             moveDirection *= speed;
 
-            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0 && !isRunning)
+            if (moveDirection.sqrMagnitude > 0 && !isRunning && !walking.isPlaying)
             {
                 Debug.Log("Is walking");
                 walking.Play();
             }
-            else
+            
+            if(moveDirection.sqrMagnitude == 0 || isRunning)
             {
                 Debug.Log("Stopped walking");
                 walking.Pause();
@@ -70,11 +71,11 @@ public class Movement : MonoBehaviour
             if (isRunning == true)
             {
                 speed = 15.0f;
-                if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+                if (moveDirection.sqrMagnitude > 0 && !running.isPlaying)
                 {
                     running.Play();
                 }
-                else
+                if (moveDirection.sqrMagnitude == 0)
                 {
                     running.Pause();
                 }
@@ -85,6 +86,7 @@ public class Movement : MonoBehaviour
         if(isRunning == false)
         {
             speed = 5.0f;
+            running.Pause();
         }
 
 

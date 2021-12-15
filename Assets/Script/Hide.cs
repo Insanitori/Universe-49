@@ -11,14 +11,20 @@ public class Hide : MonoBehaviour
     public float yaw = 0.0f;
     public float speedH = 5.0f;
     public float turning = 30.0f;
+    public float rotate;
+    
 
     //public bool isHidden;
     public Movement Move;
+
+    private AudioSource cubby;
     // Start is called before the first frame update
     void Start()
     {
         camera1.SetActive(true);
         camera2.SetActive(false);
+
+        cubby = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +34,7 @@ public class Hide : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
+                cubby.Play();
                 Move.isHidden = true;
                 camera2.SetActive(true);
                 camera1.SetActive(false);
@@ -42,7 +49,7 @@ public class Hide : MonoBehaviour
                 {
                     yaw = -turning;
                 }
-                camera2.transform.eulerAngles = new Vector3(0.0f, yaw - transform.parent.rotation.eulerAngles.y, 0.0f);
+                camera2.transform.eulerAngles = new Vector3(0.0f, yaw - rotate, 0.0f);
             }
             else
             {
