@@ -21,8 +21,8 @@ public class Movement : MonoBehaviour
 
     public bool stopMovement;
 
-    private AudioSource walking;
-    private AudioSource running;
+    public AudioSource walking;
+    public AudioSource running;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +32,7 @@ public class Movement : MonoBehaviour
         hurt = 0;
 
         //MG = GetComponent<LoadMiniGame>();
-        walking = GetComponent<AudioSource>();
-        running = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
