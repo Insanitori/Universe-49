@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,18 +278,20 @@ MonoBehaviour:
     Shift to sprint,
     but make sure to let the meter recharge before going again.
 
-    Use space to
+    Use Space to
     get into cubbies, but you must hold it down to stay inside.
 
-    Use space to
+    Use Space to
     also interact with Code panels, use the arrow keys to play the panel mini game
     and collect code.
 
+    If you miss code, press Enter to reset the game.
 
-    The goal of the game is to collect 90 lines of code!
-    Don''t let the spider demon kill you though, you can be hit a few times before
-    going down. She''s blind, so hiding with keep her from hearing you.
 
+    The
+    goal of the game is to collect 90 lines of code! Don''t let the spider demon
+    kill you though, you can be hit a few times before going down. She''s blind,
+    so hiding with keep her from hearing you. She can get you while you use panels.
 
     When
     you get enough code, head to the red pipe to escape.'
@@ -319,8 +321,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
