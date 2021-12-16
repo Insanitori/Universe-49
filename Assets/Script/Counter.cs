@@ -14,6 +14,8 @@ public class Counter : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
+
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

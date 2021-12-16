@@ -16,6 +16,7 @@ public class Hide : MonoBehaviour
 
     //public bool isHidden;
     public Movement Move;
+    public Pathfinding path;
 
     private AudioSource cubby;
     // Start is called before the first frame update
@@ -35,6 +36,11 @@ public class Hide : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 cubby.Play();
+                if (path.laughing.isPlaying)
+                {
+                    path.laughing.Stop();
+                    path.humming.Play();
+                }
                 Move.isHidden = true;
                 camera2.SetActive(true);
                 camera1.SetActive(false);

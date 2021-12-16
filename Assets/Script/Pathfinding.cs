@@ -17,7 +17,7 @@ public class Pathfinding : MonoBehaviour
     private float zoomies = 8.0f;
     public GameObject player;
 
-    private AudioSource humming;
+    public AudioSource humming;
     public AudioSource laughing;
     // Start is called before the first frame update
     void Start()

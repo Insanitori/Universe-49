@@ -1760,7 +1760,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f64275aa1aa256e4da2692972de64439, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.607
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3303,6 +3303,7 @@ MonoBehaviour:
   turning: 30
   rotate: 180
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &205624674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4549,6 +4550,7 @@ MonoBehaviour:
   turning: 30
   rotate: 0
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &298509078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7295,7 +7297,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e869c21b83e2b454fb8b04f82334d739, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.414
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7642,6 +7644,7 @@ MonoBehaviour:
   turning: 30
   rotate: 90
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &510674788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13444,6 +13447,7 @@ MonoBehaviour:
   turning: 30
   rotate: 0
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &821934263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13830,6 +13834,7 @@ MonoBehaviour:
   - {fileID: 498770162}
   Move: {fileID: 477031018}
   player: {fileID: 477031011}
+  humming: {fileID: 824916282}
   laughing: {fileID: 3903081884504220075}
 --- !u!195 &824916287
 NavMeshAgent:
@@ -18148,6 +18153,7 @@ MonoBehaviour:
   turning: 30
   rotate: 90
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &1107685892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20289,6 +20295,7 @@ MonoBehaviour:
   turning: 30
   rotate: 0
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &1270464428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26011,6 +26018,7 @@ MonoBehaviour:
   turning: 30
   rotate: 180
   Move: {fileID: 477031018}
+  path: {fileID: 824916286}
 --- !u!65 &1678569726
 BoxCollider:
   m_ObjectHideFlags: 0
